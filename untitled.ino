@@ -22,11 +22,12 @@ void setup() {
 }
 
 void loop() {
-    vaule=analogRead(ldr);//Reads the Value of LDR(light).
-    File text = SD.open("text.txt", FILE_WRITE);
-    if (text){
-        ldr.println(ldr);
-        ldr.close();
+    ldr=analogRead(ldr);//Reads the Value of LDR(light).
+    File text1 = SD.open("text.txt", FILE_WRITE);
+    if (text1){
+        text1.println(ldr);
+        text1.close();
+        Serial.println(ldr);
     }
     else{
         Serial.println("error opening text.txt");
